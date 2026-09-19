@@ -1,0 +1,906 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.7">
+  <style type="text/css">
+    body {background-color: #e5eaf2}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #151931; -webkit-text-stroke: #151931; min-height: 18.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #151931; -webkit-text-stroke: #151931}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p2"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p2"><span class="s1">&lt;head&gt;</span></p>
+<p class="p2"><span class="s1">&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p2"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p2"><span class="s1">&lt;title&gt;UNT Error Bank&lt;/title&gt;</span></p>
+<p class="p2"><span class="s1">&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</span></p>
+<p class="p2"><span class="s1">&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</span></p>
+<p class="p2"><span class="s1">&lt;link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"&gt;</span></p>
+<p class="p2"><span class="s1">&lt;style&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>:root {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--bg: #EAEEF5; --surface: #FFFFFF; --surface-2: #F3F5FA;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--ink: #1B2340; --ink-soft: #56607F; --ink-faint: #8891AC; --line: #D7DCE9;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--accent: #2F5D8A; --accent-soft: #E4ECF5;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--correct: #2E7D4F; --correct-soft: #E4F3EA;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--wrong: #C1443C; --wrong-soft: #FBEAE8;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--gold: #A9791E; --gold-soft: #F6EED9;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--radius: 10px;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--serif: "Fraunces", Georgia, "Times New Roman", serif;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>@media (prefers-color-scheme: dark) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>:root:not([data-theme="light"]) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--bg: #12162A; --surface: #1A2038; --surface-2: #202847;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--ink: #EBEEF8; --ink-soft: #AEB6D4; --ink-faint: #7A82A3; --line: #313A5E;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--accent: #6FA0D4; --accent-soft: #24304F;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--correct: #5FCB8B; --correct-soft: #1D3327;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--wrong: #F0847C; --wrong-soft: #3A2226;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>--gold: #E0B75C; --gold-soft: #382D18;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>:root[data-theme="dark"] {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--bg: #12162A; --surface: #1A2038; --surface-2: #202847;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--ink: #EBEEF8; --ink-soft: #AEB6D4; --ink-faint: #7A82A3; --line: #313A5E;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--accent: #6FA0D4; --accent-soft: #24304F;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--correct: #5FCB8B; --correct-soft: #1D3327;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--wrong: #F0847C; --wrong-soft: #3A2226;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>--gold: #E0B75C; --gold-soft: #382D18;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>* { box-sizing: border-box; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>html, body { margin: 0; padding: 0; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.55; min-height: 100vh; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>h1, h2, h3 { font-family: var(--serif); font-weight: 600; margin: 0 0 4px; color: var(--ink); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>a { color: var(--accent); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>button { font-family: var(--sans); cursor: pointer; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>input, textarea, select { font-family: var(--sans); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.wrap { max-width: 1080px; margin: 0 auto; padding: 28px 20px 60px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.wrap.narrow { max-width: 640px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.topbar { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.brand { display: flex; align-items: baseline; gap: 10px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.brand .mark { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--wrong); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.brand .name { font-family: var(--serif); font-size: 20px; font-weight: 600; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.nav-link { color: var(--ink-soft); text-decoration: none; font-size: 13.5px; border-bottom: 1px solid transparent; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.nav-link:hover { border-color: var(--ink-soft); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.card + .card { margin-top: 18px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); padding: 9px 16px; font-size: 14px; font-weight: 500; line-height: 1.2; transition: background .12s ease, border-color .12s ease; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.btn:hover { background: var(--accent-soft); border-color: var(--accent); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.btn.primary:hover { filter: brightness(1.06); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.btn.danger { color: var(--wrong); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.btn.danger:hover { background: var(--wrong-soft); border-color: var(--wrong); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.btn.small { padding: 5px 10px; font-size: 12.5px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.btn:disabled { opacity: .45; cursor: not-allowed; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>label { display: block; font-size: 12.5px; color: var(--ink-soft); margin: 0 0 5px; font-weight: 500; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>input[type=text], input[type=tel], textarea, select { width: 100%; padding: 9px 11px; border-radius: 7px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: 14.5px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>input[type=text]:focus, input[type=tel]:focus, textarea:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.field { margin-bottom: 14px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>textarea.code { resize: vertical; font-family: var(--mono); font-size: 13px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.row { display: flex; gap: 10px; flex-wrap: wrap; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.row &gt; * { flex: 1; min-width: 160px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.landing-hero { text-align: center; padding: 46px 10px 10px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.landing-hero h1 { font-size: 32px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.landing-hero p { color: var(--ink-soft); max-width: 460px; margin: 10px auto 0; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 30px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>@media (max-width: 620px) { .choice-grid { grid-template-columns: 1fr; } }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.choice { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; text-align: left; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.choice .icon { font-size: 22px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.choice h3 { margin-top: 10px; font-size: 17px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.choice p { color: var(--ink-soft); font-size: 13.5px; margin: 4px 0 16px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.exam-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); border-left: 4px solid var(--wrong); padding: 26px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.q-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; flex-wrap: wrap; gap: 6px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.q-count { font-family: var(--mono); font-size: 12.5px; color: var(--ink-faint); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.q-topic { font-size: 12px; color: var(--accent); font-weight: 600; background: var(--accent-soft); padding: 2px 8px; border-radius: 5px; white-space: nowrap; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.q-type-note { font-size: 11.5px; color: var(--ink-faint); margin-bottom: 8px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.q-text { font-size: 18px; line-height: 1.5; margin: 6px 0 20px; font-family: var(--serif); font-weight: 500; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.options { display: flex; flex-direction: column; gap: 9px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.option { display: flex; align-items: flex-start; gap: 10px; padding: 11px 13px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-2); cursor: pointer; text-align: left; width: 100%; font-size: 14.5px; color: var(--ink); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.option:hover { border-color: var(--accent); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.option.selected { border-color: var(--accent); background: var(--accent-soft); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.option .letter { font-family: var(--mono); font-weight: 600; color: var(--ink-faint); flex-shrink: 0; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.option.selected .letter { color: var(--accent); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.dots { display: flex; flex-wrap: wrap; gap: 5px; margin: 18px 0; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.dot { width: 22px; height: 22px; border-radius: 5px; border: 1px solid var(--line); background: var(--surface-2); font-family: var(--mono); font-size: 10.5px; display: flex; align-items: center; justify-content: center; color: var(--ink-faint); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.dot.answered { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.dot.current { outline: 2px solid var(--ink); outline-offset: 1px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.quiz-actions { display: flex; justify-content: space-between; margin-top: 20px; gap: 10px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.score-hero { text-align: center; padding: 26px 0 10px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.score-num { font-family: var(--serif); font-size: 56px; font-weight: 700; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.score-pct { color: var(--ink-soft); font-size: 14px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.topic-bar-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.topic-bar-row .label { width: 190px; flex-shrink: 0; font-size: 13px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.topic-bar-track { flex: 1; height: 8px; border-radius: 4px; background: var(--surface-2); overflow: hidden; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.topic-bar-fill { height: 100%; border-radius: 4px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.topic-bar-row .pct { width: 110px; text-align: right; font-family: var(--mono); font-size: 12px; color: var(--ink-soft); flex-shrink: 0; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.code-box { font-family: var(--mono); font-size: 12px; background: var(--surface-2); border: 1px dashed var(--line); border-radius: 8px; padding: 10px; word-break: break-all; max-height: 90px; overflow-y: auto; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.dash { display: grid; grid-template-columns: 190px 1fr; gap: 22px; align-items: start; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>@media (max-width: 760px) { .dash { grid-template-columns: 1fr; } }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.side-nav { display: flex; flex-direction: column; gap: 4px; position: sticky; top: 20px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.side-nav button { text-align: left; background: transparent; border: none; padding: 9px 12px; border-radius: 7px; color: var(--ink-soft); font-size: 14px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.side-nav button.active { background: var(--surface); color: var(--ink); font-weight: 600; border: 1px solid var(--line); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>@media (max-width: 760px) { .side-nav { flex-direction: row; flex-wrap: wrap; position: static; } }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>table { width: 100%; border-collapse: collapse; font-size: 13.5px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>th { color: var(--ink-faint); font-weight: 600; font-size: 11.5px; text-transform: uppercase; letter-spacing: .03em; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>tr.clickable { cursor: pointer; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>tr.clickable:hover td { background: var(--surface-2); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.table-wrap { overflow-x: auto; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.pill { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11.5px; font-weight: 600; font-family: var(--mono); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.pill.good { background: var(--correct-soft); color: var(--correct); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.pill.mid { background: var(--gold-soft); color: var(--gold); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.pill.bad { background: var(--wrong-soft); color: var(--wrong); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.q-list-item { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.q-list-item .top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.q-list-item .txt { font-weight: 500; flex: 1; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.q-list-item .tags { margin: 6px 0 0; display: flex; gap: 6px; flex-wrap: wrap; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.tag { font-size: 11px; padding: 2px 7px; border-radius: 5px; background: var(--surface-2); color: var(--ink-soft); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.q-list-item .opts { margin-top: 8px; font-size: 13px; color: var(--ink-soft); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.q-list-item .opts .ok { color: var(--correct); font-weight: 600; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.empty-note { color: var(--ink-faint); font-size: 13.5px; padding: 18px 0; text-align: center; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.section-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.section-head p.hint { color: var(--ink-faint); font-size: 12.5px; margin: 2px 0 0; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.divider { height: 1px; background: var(--line); margin: 20px 0; border: none; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.lock-screen { max-width: 360px; margin: 60px auto; text-align: center; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 9px 16px; border-radius: 8px; font-size: 13px; z-index: 50; box-shadow: 0 6px 18px rgba(0,0,0,.2); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.flex-between { display: flex; justify-content: space-between; align-items: center; gap: 10px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.mt8{margin-top:8px}.mt12{margin-top:12px}.mt16{margin-top:16px}.mt20{margin-top:20px}.mb0{margin-bottom:0}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.muted { color: var(--ink-soft); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.small { font-size: 12.5px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.subtle-h { text-transform: none; color: var(--ink-soft); font-size: 13px; letter-spacing: 0; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.stat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>@media (max-width: 760px) { .stat-grid { grid-template-columns: repeat(2,1fr); } }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.stat-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.stat-card .num { font-family: var(--serif); font-size: 26px; font-weight: 700; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.stat-card .lbl { font-size: 12px; color: var(--ink-faint); margin-top: 2px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.flag-item { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.flag-item:last-child { border-bottom: none; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.flag-item .n { color: var(--wrong); font-weight: 600; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.opt-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.opt-row input[type=checkbox], .opt-row input[type=radio] { width: auto; flex-shrink: 0; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.test-item { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.test-item:last-child { border-bottom: none; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.test-item .ti-left .t { font-weight: 600; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.test-item .ti-left .m { font-size: 12.5px; color: var(--ink-faint); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.back-link { font-size: 13px; color: var(--ink-soft); cursor: pointer; display: inline-block; margin-bottom: 12px; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>.back-link:hover { color: var(--ink); }</span></p>
+<p class="p2"><span class="s1">&lt;/style&gt;</span></p>
+<p class="p2"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p2"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1">&lt;div id="app"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1">&lt;script&gt;</span></p>
+<p class="p2"><span class="s1">(function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>"use strict";</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>/* ============================================================</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span>CONFIG</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span>Paste your Google Apps Script Web App URL here (ends in /exec)</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span>BEFORE uploading this file to GitHub Pages. Every visitor —</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span>student or teacher, any device — reads this constant directly</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">     </span>from the file itself, so nobody needs to configure anything.</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>============================================================ */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>var SERVER_URL = "https://script.google.com/macros/s/AKfycbyQQCVnLaast2-APacI70GxqmEV4-eKxp55RpweFSLcBkr1DAhEr-BCXn2HznA6TSx3/exec"; // e.g. "https://script.google.com/macros/s/AKfycb.../exec"</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function getServerUrl(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>// localStorage override lets YOU test locally before hardcoding SERVER_URL for real deployment.</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return SERVER_URL || localStorage.getItem("untServerUrlDev") || "";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>var UNT_TOPICS = ["Articles","Prepositions","Conjunctions","Word formation","Parts of speech",</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>"Synonyms / Antonyms","Collocations / lexical compatibility","Polysemantic words","Set expressions",</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>"Sentences","Constructions","Speech norms","Reading / text work"];</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>var QUESTION_TYPES = {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>single: { label: "Single choice", emptyAnswer: function(){ return null; }, isAnswered: function(v){ return v != null; } },</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>multiple: { label: "Multiple choice", emptyAnswer: function(){ return []; }, isAnswered: function(v){ return Array.isArray(v) &amp;&amp; v.length &gt; 0; } }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>};</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>/* ---------------- helpers ---------------- */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function $(sel, root){ return (root||document).querySelector(sel); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function escapeHtml(str){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return String(str == null ? "" : str).replace(/[&amp;&lt;&gt;"']/g, function(c){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>return ({"&amp;":"&amp;amp;","&lt;":"&amp;lt;","&gt;":"&amp;gt;",'"':"&amp;quot;","'":"&amp;#39;"})[c];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function uid(){ return "tmp" + Math.random().toString(36).slice(2,9); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function letters(){ return ["A","B","C","D","E","F"]; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function toast(msg){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var el = document.createElement("div");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>el.className = "toast"; el.textContent = msg;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>document.body.appendChild(el);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>setTimeout(function(){ el.remove(); }, 2400);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function copyText(text){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>navigator.clipboard.writeText(text).then(function(){ toast("Copied"); }, function(){ fallbackCopy(text); });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>} else fallbackCopy(text);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function fallbackCopy(text){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var ta = document.createElement("textarea");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>document.body.appendChild(ta); ta.select();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>try { document.execCommand("copy"); toast("Copied"); } catch(e){ toast("Copy failed — select and copy manually"); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>ta.remove();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>/* ---------------- API ---------------- */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function apiGet(action, params){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var url = getServerUrl();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (!url) return Promise.reject(new Error("Server not configured yet"));</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var qs = Object.keys(params || {}).map(function(k){ return encodeURIComponent(k) + "=" + encodeURIComponent(params[k]); }).join("&amp;");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return fetch(url + "?action=" + action + (qs ? "&amp;" + qs : ""))</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>.then(function(r){ return r.json(); })</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>.then(function(data){ if (!data.ok) throw new Error(data.error || "Server error"); return data; });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function apiPost(action, body){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var url = getServerUrl();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (!url) return Promise.reject(new Error("Server not configured yet"));</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var payload = Object.assign({ action: action }, body || {});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return fetch(url, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(payload) })</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>.then(function(r){ return r.json(); })</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>.then(function(data){ if (!data.ok) throw new Error(data.error || "Server error"); return data; });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>/* ---------------- teacher auth (pin travels in-memory / sessionStorage only, never in this file) ---------------- */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>var pinCache = sessionStorage.getItem("untPin") || "";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function isUnlocked(){ return !!pinCache &amp;&amp; sessionStorage.getItem("untUnlocked") === "1"; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function lockOut(){ pinCache = ""; sessionStorage.removeItem("untPin"); sessionStorage.removeItem("untUnlocked"); }</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>/* ---------------- app state ---------------- */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>var app = $("#app");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>var teacherTab = "tests";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>var testsList = [];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>var resultsList = [];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>var managingTest = null; <span class="Apple-converted-space">  </span>// full test object incl. answer keys, while editing</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>var questionDraft = null;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>var openStudentPhone = null;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>var studentSession = null;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>window.addEventListener("hashchange", render);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>render();</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function getHash(){ return location.hash.replace(/^#/, ""); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function setHash(h){ location.hash = h; }</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function render(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var hash = getHash();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (hash.indexOf("test=") === 0) renderStudent(decodeURIComponent(hash.slice(5)));</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>else if (hash === "teacher") renderTeacher();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>else renderLanding();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>window.scrollTo(0,0);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function topbarHtml(showHome){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return '&lt;div class="topbar"&gt;&lt;div class="brand"&gt;&lt;span class="mark"&gt;✓✗&lt;/span&gt;&lt;span class="name"&gt;UNT Error Bank&lt;/span&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>(showHome ? '&lt;a class="nav-link" href="#"&gt;Home&lt;/a&gt;' : '&lt;a class="nav-link" href="#teacher"&gt;Teacher dashboard&lt;/a&gt;') + '&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function serverMissingHtml(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return '&lt;div class="card"&gt;&lt;h2&gt;Server not configured&lt;/h2&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;p class="muted"&gt;This copy of the app doesn&amp;rsquo;t have a backend connected yet. If you&amp;rsquo;re the teacher, open the Settings tab in the dashboard, or edit the SERVER_URL constant near the top of the file before deploying.&lt;/p&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>/* ================= LANDING ================= */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function renderLanding(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.innerHTML = '&lt;div class="wrap narrow"&gt;' + topbarHtml(false) +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="landing-hero"&gt;&lt;div style="font-size:34px;"&gt;🖊️&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;h1&gt;Find the pattern in every mistake.&lt;/h1&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;p&gt;A private space to run English UNT practice tests and see exactly which topics are costing your students points.&lt;/p&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card" style="text-align:center;"&gt;&lt;h3&gt;Teacher&lt;/h3&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;p class="muted small"&gt;Create tests, share links with students, review error analysis.&lt;/p&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;button class="btn primary" id="goTeacher"&gt;Open dashboard&lt;/button&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>(getServerUrl() ? "" : '&lt;div class="card"&gt;&lt;p class="muted small"&gt;No backend is connected in this copy of the app yet — see the teacher dashboard&amp;rsquo;s Settings tab.&lt;/p&gt;&lt;/div&gt;') +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>$("#goTeacher").onclick = function(){ setHash("teacher"); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>/* ================= STUDENT ================= */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function cacheKey(testId){ return "untAttempt_" + testId; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function readCache(testId){ try { return JSON.parse(localStorage.getItem(cacheKey(testId)) || "null"); } catch(e){ return null; } }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function writeCache(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var s = studentSession;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (!s) return;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>localStorage.setItem(cacheKey(s.testId), JSON.stringify({</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>testId: s.testId, attemptId: s.attemptId, test: s.test,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>name: s.name, phone: s.phone, answers: s.answers, current: s.current,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>status: s.step === "result" ? "SUBMITTED" : "IN_PROGRESS",</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>score: s.score, total: s.total, lastSavedAt: Date.now()</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}));</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function renderStudent(testId){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (!getServerUrl()) { app.innerHTML = '&lt;div class="wrap narrow"&gt;' + topbarHtml(true) + serverMissingHtml() + '&lt;/div&gt;'; return; }</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (studentSession &amp;&amp; studentSession.testId === testId) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>if (studentSession.step === "quiz") return renderStudentQuiz();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>if (studentSession.step === "result") return renderStudentResult();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>return renderStudentIntro();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var cached = readCache(testId);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (cached &amp;&amp; cached.status === "SUBMITTED") {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>studentSession = { testId: testId, test: cached.test, step: "result", score: cached.score, total: cached.total };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>return renderStudentResult();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (cached &amp;&amp; cached.status === "IN_PROGRESS") return renderResumePrompt(testId, cached);</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.innerHTML = '&lt;div class="wrap narrow"&gt;' + topbarHtml(true) + '&lt;div class="card"&gt;&lt;p class="muted"&gt;Loading test…&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>apiGet("getTest", { testId: testId }).then(function(res){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>studentSession = {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>testId: testId, test: res.test, step: "intro", name: "", phone: "",</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>attemptId: null, answers: {}, current: 0, saveStatus: "idle", submitError: null</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>renderStudentIntro();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}).catch(function(err){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>app.innerHTML = '&lt;div class="wrap narrow"&gt;' + topbarHtml(true) +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="card"&gt;&lt;h2&gt;This test link looks broken&lt;/h2&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;p class="muted"&gt;' + escapeHtml(err.message) + '. Ask your teacher to resend the link, or try again if you&amp;rsquo;re offline.&lt;/p&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;a class="btn mt12" href="#"&gt;Back home&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function renderResumePrompt(testId, cached){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.innerHTML = '&lt;div class="wrap narrow"&gt;' + topbarHtml(true) +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card" style="text-align:center;"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;h2&gt;' + escapeHtml(cached.test.title || "Test") + '&lt;/h2&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;p class="muted"&gt;You have an unfinished attempt on this device. Continue where you left off?&lt;/p&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="row mt16"&gt;&lt;button class="btn primary" id="continueBtn"&gt;Continue&lt;/button&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;button class="btn danger" id="restartBtn"&gt;Start over&lt;/button&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>$("#continueBtn").onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>studentSession = {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>testId: testId, test: cached.test, step: "quiz", name: cached.name, phone: cached.phone,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>attemptId: cached.attemptId, answers: cached.answers, current: cached.current || 0,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>saveStatus: "idle", submitError: null</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>renderStudentQuiz();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>$("#restartBtn").onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>localStorage.removeItem(cacheKey(testId));</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>render();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function renderStudentIntro(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var s = studentSession, t = s.test;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.innerHTML = '&lt;div class="wrap narrow"&gt;' + topbarHtml(true) +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card"&gt;&lt;h2&gt;' + escapeHtml(t.title || "Test") + '&lt;/h2&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;p class="muted small"&gt;' + t.questions.length + ' questions &amp;middot; enter your details to begin&lt;/p&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="mt16"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="field"&gt;&lt;label&gt;Full name&lt;/label&gt;&lt;input type="text" id="sName" placeholder="e.g. Aigerim Bekova"&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="field"&gt;&lt;label&gt;Phone number&lt;/label&gt;&lt;input type="tel" id="sPhone" placeholder="e.g. +7 700 000 0000"&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;button class="btn primary" id="startBtn"&gt;Start test&lt;/button&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;p class="small muted mt12" id="startErr" style="display:none;color:var(--wrong);"&gt;&lt;/p&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>$("#startBtn").onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var name = $("#sName").value.trim(), phone = $("#sPhone").value.trim();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>if (!name || !phone) { toast("Enter your name and phone number"); return; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var btn = $("#startBtn"); btn.disabled = true; btn.textContent = "Starting…";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>apiPost("startAttempt", { testId: s.testId, studentName: name, phone: phone }).then(function(res){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>s.attemptId = res.attemptId; s.name = name; s.phone = phone;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>s.answers = {}; t.questions.forEach(function(q){ s.answers[q.id] = QUESTION_TYPES[q.type].emptyAnswer(); });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>s.step = "quiz"; writeCache(); renderStudentQuiz();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>}).catch(function(err){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>btn.disabled = false; btn.textContent = "Start test";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>var e = $("#startErr"); e.style.display = "block"; e.textContent = "Couldn't start the test — " + err.message + ". Please try again.";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function currentlyOnQuiz(testId){ return studentSession &amp;&amp; studentSession.testId === testId &amp;&amp; studentSession.step === "quiz"; }</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function renderStudentQuiz(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var s = studentSession, t = s.test, qi = s.current, q = t.questions[qi];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var L = letters(), isMulti = q.type === "multiple", chosen = s.answers[q.id];</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var dotsHtml = t.questions.map(function(qq, i){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var answered = QUESTION_TYPES[qq.type].isAnswered(s.answers[qq.id]);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>return '&lt;div class="dot' + (answered ? " answered" : "") + (i === qi ? " current" : "") + '" data-jump="' + i + '"&gt;' + (i+1) + '&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}).join("");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var optsHtml = q.options.map(function(opt, i){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var sel = isMulti ? chosen.indexOf(i) !== -1 : chosen === i;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>return '&lt;button class="option' + (sel ? " selected" : "") + '" data-opt="' + i + '"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;span class="letter"&gt;' + L[i] + '&lt;/span&gt;&lt;span&gt;' + escapeHtml(opt) + '&lt;/span&gt;&lt;/button&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}).join("");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var answeredCount = t.questions.filter(function(qq){ return QUESTION_TYPES[qq.type].isAnswered(s.answers[qq.id]); }).length;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var statusMap = {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>idle: "", saving: '&lt;span style="color:var(--gold);"&gt;⟳ Saving…&lt;/span&gt;',</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>saved: '&lt;span style="color:var(--correct);"&gt;✓ Saved&lt;/span&gt;',</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>offline: '&lt;span style="color:var(--wrong);"&gt;⚠ Offline — saved on this device&lt;/span&gt;'</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var errBanner = s.submitError ? '&lt;p class="small mt8" style="color:var(--wrong);"&gt;' + escapeHtml(s.submitError) + '&lt;/p&gt;' : "";</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.innerHTML = '&lt;div class="wrap narrow"&gt;' + topbarHtml(true) +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="exam-card"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="q-meta"&gt;&lt;span class="q-count"&gt;QUESTION ' + (qi+1) + ' / ' + t.questions.length + '&lt;/span&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;span class="small"&gt;' + (statusMap[s.saveStatus] || "") + '&lt;/span&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="q-type-note"&gt;' + (isMulti ? "Select all correct answers" : "Select one answer") + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="q-text"&gt;' + escapeHtml(q.text) + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="options"&gt;' + optsHtml + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="dots"&gt;' + dotsHtml + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>errBanner +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="quiz-actions"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;button class="btn" id="prevBtn" ' + (qi===0 ? "disabled" : "") + '&gt;&amp;larr; Previous&lt;/button&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>(qi &lt; t.questions.length - 1</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>? '&lt;button class="btn primary" id="nextBtn"&gt;Next &amp;rarr;&lt;/button&gt;'</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>: '&lt;button class="btn primary" id="submitBtn"&gt;Submit (' + answeredCount + '/' + t.questions.length + ' answered)&lt;/button&gt;') +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.querySelectorAll(".option").forEach(function(btn){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>btn.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>var i = parseInt(btn.getAttribute("data-opt"), 10);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>if (isMulti) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>var arr = s.answers[q.id].slice(); var pos = arr.indexOf(i);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>if (pos === -1) arr.push(i); else arr.splice(pos, 1);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>s.answers[q.id] = arr;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>} else s.answers[q.id] = i;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>writeCache();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>s.saveStatus = "saving"; renderStudentQuiz();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>apiPost("saveAttemptProgress", { attemptId: s.attemptId, currentQuestion: s.current, answers: s.answers })</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>.then(function(){ s.saveStatus = "saved"; if (currentlyOnQuiz(s.testId)) renderStudentQuiz(); })</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>.catch(function(){ s.saveStatus = "offline"; if (currentlyOnQuiz(s.testId)) renderStudentQuiz(); });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.querySelectorAll(".dot").forEach(function(d){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>d.onclick = function(){ s.current = parseInt(d.getAttribute("data-jump"),10); writeCache(); renderStudentQuiz(); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var prevBtn = $("#prevBtn"); if (prevBtn) prevBtn.onclick = function(){ s.current--; writeCache(); renderStudentQuiz(); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var nextBtn = $("#nextBtn"); if (nextBtn) nextBtn.onclick = function(){ s.current++; writeCache(); renderStudentQuiz(); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var submitBtn = $("#submitBtn");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (submitBtn) submitBtn.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var unanswered = t.questions.length - answeredCount;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>if (unanswered &gt; 0 &amp;&amp; !confirm(unanswered + " question(s) unanswered. Submit anyway?")) return;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>doSubmit();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function doSubmit(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var s = studentSession;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>s.submitError = null;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var btn = $("#submitBtn"); if (btn) { btn.disabled = true; btn.textContent = "Submitting…"; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>apiPost("submitAttempt", { attemptId: s.attemptId, answers: s.answers }).then(function(res){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>s.score = res.score; s.total = res.total; s.step = "result"; writeCache(); render();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}).catch(function(err){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>s.submitError = "Your answers are saved. We haven't submitted the test yet. (" + err.message + ")";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>if (currentlyOnQuiz(s.testId)) renderStudentQuiz();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function renderStudentResult(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var s = studentSession;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var pct = s.total ? Math.round((s.score / s.total) * 100) : 0;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.innerHTML = '&lt;div class="wrap narrow"&gt;' + topbarHtml(true) +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card"&gt;&lt;div class="score-hero"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="q-count"&gt;' + escapeHtml(s.test.title || "Test") + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="score-num"&gt;' + s.score + ' / ' + s.total + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="score-pct"&gt;' + pct + '% &amp;middot; test completed successfully&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>/* ================= TEACHER ================= */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function renderTeacher(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (!getServerUrl()) { app.innerHTML = '&lt;div class="wrap narrow"&gt;' + topbarHtml(true) + serverMissingHtml() + settingsCardServerOnly() + '&lt;/div&gt;'; wireServerOnlySetup(); return; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (!isUnlocked()) { renderLock(); return; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var tabs = [["tests","Tests"], ["submissions","Submissions"], ["dashboard","Dashboard"], ["settings","Settings"]];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var navHtml = tabs.map(function(t){ return '&lt;button class="' + (teacherTab === t[0] ? "active" : "") + '" data-tab="' + t[0] + '"&gt;' + t[1] + '&lt;/button&gt;'; }).join("");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.innerHTML = '&lt;div class="wrap"&gt;' + topbarHtml(true) + '&lt;div class="dash"&gt;&lt;div class="side-nav"&gt;' + navHtml + '&lt;/div&gt;&lt;div id="dashContent"&gt;&lt;div class="empty-note"&gt;Loading…&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.querySelectorAll("[data-tab]").forEach(function(b){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>b.onclick = function(){ teacherTab = b.getAttribute("data-tab"); managingTest = null; questionDraft = null; openStudentPhone = null; renderTeacher(); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (teacherTab === "tests") loadTests();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>else if (teacherTab === "submissions") loadResults("submissions");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>else if (teacherTab === "dashboard") loadResults("dashboard");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>else { $("#dashContent").innerHTML = settingsTabHtml(); wireSettingsTab(); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function settingsCardServerOnly(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return '&lt;div class="card"&gt;&lt;h3&gt;Connect a server for testing&lt;/h3&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;p class="hint"&gt;Paste your Google Apps Script Web App URL to try the dashboard in this browser. For real deployment, put it in the SERVER_URL constant near the top of the HTML file instead.&lt;/p&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="field"&gt;&lt;input type="text" id="devServerUrl" placeholder="https://script.google.com/macros/s/.../exec"&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;button class="btn primary" id="saveDevServerBtn"&gt;Save and continue&lt;/button&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function wireServerOnlySetup(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var b = $("#saveDevServerBtn");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (b) b.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var v = $("#devServerUrl").value.trim();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>if (!v) return;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>localStorage.setItem("untServerUrlDev", v); renderTeacher();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function renderLock(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.innerHTML = '&lt;div class="wrap narrow"&gt;' + topbarHtml(true) +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="lock-screen card"&gt;&lt;h2&gt;Teacher dashboard&lt;/h2&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;p class="muted small"&gt;Enter your PIN. If this is the first time anyone has opened this dashboard, whatever you type here becomes the PIN.&lt;/p&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="field"&gt;&lt;input type="text" id="pinInput" placeholder="PIN"&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;button class="btn primary" id="unlockBtn"&gt;Continue&lt;/button&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;p class="small muted mt12" id="lockErr" style="display:none;color:var(--wrong);"&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>$("#unlockBtn").onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var pin = $("#pinInput").value.trim();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>if (!pin) return;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>apiPost("verifyPin", { pin: pin }).then(function(res){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>pinCache = pin; sessionStorage.setItem("untPin", pin); sessionStorage.setItem("untUnlocked", "1");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>if (res.bootstrapped) toast("PIN set — keep it somewhere safe");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>renderTeacher();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>}).catch(function(err){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>var e = $("#lockErr"); e.style.display = "block"; e.textContent = err.message;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>/* ---------- Tests tab ---------- */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function loadTests(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>apiGet("listTests", { pin: pinCache }).then(function(res){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>testsList = res.tests;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>if (managingTest) loadTestFull(managingTest.id); else { $("#dashContent").innerHTML = testsTabHtml(); wireTeacherTab(); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}).catch(handleTeacherApiError);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function loadTestFull(testId){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>apiGet("getTestFull", { pin: pinCache, testId: testId }).then(function(res){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>managingTest = res.test; questionDraft = null;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>$("#dashContent").innerHTML = questionEditorHtml(); wireTeacherTab();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}).catch(handleTeacherApiError);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function handleTeacherApiError(err){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (err.message === "unauthorized") { lockOut(); toast("Session expired — enter your PIN again"); renderTeacher(); return; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>$("#dashContent").innerHTML = '&lt;div class="card"&gt;&lt;p class="muted"&gt;Couldn&amp;rsquo;t reach the server: ' + escapeHtml(err.message) + '. &lt;a href="#" id="retryBtn"&gt;Retry&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var r = $("#retryBtn"); if (r) r.onclick = function(e){ e.preventDefault(); renderTeacher(); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function testsTabHtml(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var listHtml = testsList.length === 0 ? '&lt;div class="empty-note"&gt;No tests yet — create your first one below.&lt;/div&gt;' :</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>testsList.map(function(t){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>return '&lt;div class="test-item"&gt;&lt;div class="ti-left"&gt;&lt;div class="t"&gt;' + escapeHtml(t.title) + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div class="m"&gt;' + t.questionCount + ' question(s)&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div style="display:flex;gap:6px;flex-wrap:wrap;"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;button class="btn small" data-manage="' + t.id + '"&gt;Edit questions&lt;/button&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;button class="btn small primary" data-getlink="' + t.id + '"&gt;Get link&lt;/button&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;button class="btn small danger" data-deltest="' + t.id + '"&gt;Delete&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>}).join("");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return '&lt;div class="card"&gt;&lt;div class="section-head"&gt;&lt;div&gt;&lt;h2&gt;Your tests&lt;/h2&gt;&lt;p class="hint"&gt;Stored centrally — visible from any device once you&amp;rsquo;re signed in with the PIN&lt;/p&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;button class="btn primary" id="newTestBtn"&gt;+ New test&lt;/button&gt;&lt;/div&gt;' + listHtml + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="card" id="linkOutputCard" style="display:none;"&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function questionEditorHtml(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var t = managingTest;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var qListHtml = t.questions.length === 0 ? '&lt;div class="empty-note"&gt;No questions yet.&lt;/div&gt;' :</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>t.questions.map(function(q, i){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>var optsHtml = q.options.map(function(o, oi){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>var isCorrect = q.type === "multiple" ? q.correct.indexOf(oi) !== -1 : q.correct === oi;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>return '&lt;div' + (isCorrect ? ' class="ok"' : '') + '&gt;' + letters()[oi] + '. ' + escapeHtml(o) + '&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}).join("");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>return '&lt;div class="q-list-item"&gt;&lt;div class="top"&gt;&lt;div class="txt"&gt;Q' + (i+1) + '. ' + escapeHtml(q.text) + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div style="flex-shrink:0;display:flex;gap:6px;"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;button class="btn small" data-editq="' + q.id + '"&gt;Edit&lt;/button&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;button class="btn small danger" data-delq="' + q.id + '"&gt;Delete&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div class="tags"&gt;&lt;span class="tag"&gt;' + escapeHtml(q.topic||"") + '&lt;/span&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>(q.errorType ? '&lt;span class="tag"&gt;' + escapeHtml(q.errorType) + '&lt;/span&gt;' : '') +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>(q.difficulty ? '&lt;span class="tag"&gt;' + escapeHtml(q.difficulty) + '&lt;/span&gt;' : '') +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;span class="tag"&gt;' + QUESTION_TYPES[q.type].label + '&lt;/span&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div class="opts"&gt;' + optsHtml + '&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>}).join("");</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var d = questionDraft || { id: null, topic: UNT_TOPICS[0], errorType: "", difficulty: "", type: "single", text: "", options: ["",""], correct: 0 };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var isMulti = d.type === "multiple";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var optRows = d.options.map(function(o, i){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var checked = isMulti ? (d.correct.indexOf(i) !== -1) : (d.correct === i);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>return '&lt;div class="opt-row"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;input type="' + (isMulti ? "checkbox" : "radio") + '" name="correctOpt" data-correct="' + i + '" ' + (checked ? "checked" : "") + '&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;input type="text" data-optfield="' + i + '" value="' + escapeHtml(o) + '" placeholder="Option ' + letters()[i] + '" style="flex:1;"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>(d.options.length &gt; 2 ? '&lt;button type="button" class="btn small danger" data-rmopt="' + i + '"&gt;✕&lt;/button&gt;' : '') +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}).join("");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var topicOptions = UNT_TOPICS.map(function(top){ return '&lt;option value="' + escapeHtml(top) + '"' + (top===d.topic ? " selected" : "") + '&gt;' + escapeHtml(top) + '&lt;/option&gt;'; }).join("");</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return '&lt;div class="back-link" id="backToTests"&gt;&amp;larr; All tests&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card"&gt;&lt;div class="section-head"&gt;&lt;div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;input type="text" id="testTitleInput" value="' + escapeHtml(t.title) + '" style="font-family:var(--serif);font-size:19px;font-weight:600;border:none;background:transparent;padding:0;"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;p class="hint"&gt;' + t.questions.length + ' question(s)&lt;/p&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;button class="btn small" id="saveTitleBtn"&gt;Save title&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card"&gt;' + qListHtml + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card"&gt;&lt;h3&gt;' + (d.id ? "Edit question" : "Add a question") + '&lt;/h3&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="row"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div class="field"&gt;&lt;label&gt;UNT topic&lt;/label&gt;&lt;select id="qTopic"&gt;' + topicOptions + '&lt;/select&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div class="field"&gt;&lt;label&gt;Error type &lt;span class="muted"&gt;(optional — your own diagnostic label, not an official UNT category)&lt;/span&gt;&lt;/label&gt;&lt;input type="text" id="qErrorType" value="' + escapeHtml(d.errorType) + '" placeholder="e.g. verb + preposition"&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="row"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div class="field"&gt;&lt;label&gt;Question type&lt;/label&gt;&lt;select id="qType"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>'&lt;option value="single"' + (d.type==="single"?" selected":"") + '&gt;Single choice&lt;/option&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>'&lt;option value="multiple"' + (d.type==="multiple"?" selected":"") + '&gt;Multiple choice&lt;/option&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;/select&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div class="field"&gt;&lt;label&gt;Difficulty &lt;span class="muted"&gt;(optional)&lt;/span&gt;&lt;/label&gt;&lt;input type="text" id="qDifficulty" value="' + escapeHtml(d.difficulty||"") + '" placeholder="e.g. Easy / Medium / Hard"&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="field"&gt;&lt;label&gt;Question text&lt;/label&gt;&lt;textarea id="qText" rows="2"&gt;' + escapeHtml(d.text) + '&lt;/textarea&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;label&gt;Options &amp;mdash; mark the correct answer' + (isMulti ? "(s)" : "") + '&lt;/label&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>optRows +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;button type="button" class="btn small" id="addOptBtn" ' + (d.options.length &gt;= 6 ? "disabled" : "") + '&gt;+ Add option&lt;/button&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="row mt16"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;button class="btn primary" id="saveQBtn"&gt;' + (d.id ? "Save changes" : "Add question") + '&lt;/button&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>(d.id ? '&lt;button class="btn" id="cancelEditBtn"&gt;Cancel&lt;/button&gt;' : '') +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>/* ---------- Submissions / Dashboard tabs (share resultsList) ---------- */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function loadResults(forTab){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>apiGet("listResults", { pin: pinCache }).then(function(res){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>resultsList = res.results;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>$("#dashContent").innerHTML = forTab === "submissions" ? submissionsTabHtml() : dashboardTabHtml();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>wireTeacherTab();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}).catch(handleTeacherApiError);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function submissionsTabHtml(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (openStudentPhone) return studentDetailHtml(openStudentPhone);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var results = resultsList.slice().sort(function(a,b){ return new Date(b.submittedAt) - new Date(a.submittedAt); });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var rowsHtml = results.length === 0 ? '&lt;tr&gt;&lt;td colspan="5" class="empty-note"&gt;No submissions yet.&lt;/td&gt;&lt;/tr&gt;' :</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>results.map(function(r){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>var pct = r.total ? Math.round((r.score/r.total)*100) : 0;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>var pillClass = pct &gt;= 70 ? "good" : (pct &gt;= 40 ? "mid" : "bad");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>return '&lt;tr class="clickable" data-openphone="' + escapeHtml(r.phone) + '"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;td&gt;' + escapeHtml(r.studentName) + '&lt;/td&gt;&lt;td&gt;' + escapeHtml(r.phone) + '&lt;/td&gt;&lt;td&gt;' + escapeHtml(r.testTitle) + '&lt;/td&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;td&gt;&lt;span class="pill ' + pillClass + '"&gt;' + r.score + '/' + r.total + ' &amp;middot; ' + pct + '%&lt;/span&gt;&lt;/td&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;td class="small muted"&gt;' + new Date(r.submittedAt).toLocaleDateString() + '&lt;/td&gt;&lt;/tr&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>}).join("");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return '&lt;div class="card"&gt;&lt;div class="section-head"&gt;&lt;div&gt;&lt;h2&gt;Submissions&lt;/h2&gt;&lt;p class="hint"&gt;' + results.length + ' total &amp;middot; click a row for that student&amp;rsquo;s error analysis&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="table-wrap"&gt;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Student&lt;/th&gt;&lt;th&gt;Phone&lt;/th&gt;&lt;th&gt;Test&lt;/th&gt;&lt;th&gt;Score&lt;/th&gt;&lt;th&gt;Date&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;tbody&gt;' + rowsHtml + '&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function errorLabel(d){ return d.errorType ? (d.topic + " → " + d.errorType) : d.topic; }</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function studentDetailHtml(phone){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var subs = resultsList.filter(function(r){ return r.phone === phone; }).sort(function(a,b){ return new Date(b.submittedAt) - new Date(a.submittedAt); });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (subs.length === 0) { openStudentPhone = null; return submissionsTabHtml(); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var latest = subs[0];</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var avgPct = Math.round(subs.reduce(function(sum,r){ return sum + (r.total ? (r.score/r.total)*100 : 0); }, 0) / subs.length);</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>function tally(list){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var map = {};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>list.forEach(function(r){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>r.details.forEach(function(d){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>if (d.isCorrect) return;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>var key = errorLabel(d);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>if (!map[key]) map[key] = { wrong: 0, testIds: {} };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>map[key].wrong++; map[key].testIds[r.testId] = true;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>return Object.keys(map).map(function(k){ return { label: k, wrong: map[k].wrong, testCount: Object.keys(map[k].testIds).length }; })</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>.sort(function(a,b){ return b.wrong - a.wrong; });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var latestRows = tally([latest]);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var maxLatest = Math.max.apply(null, latestRows.map(function(r){ return r.wrong; }).concat([1]));</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var latestHtml = latestRows.length === 0 ? '&lt;p class="muted small"&gt;No mistakes on this test.&lt;/p&gt;' :</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>latestRows.map(function(row){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>return '&lt;div class="topic-bar-row"&gt;&lt;div class="label"&gt;' + escapeHtml(row.label) + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div class="topic-bar-track"&gt;&lt;div class="topic-bar-fill" style="width:' + Math.round(row.wrong/maxLatest*100) + '%;background:var(--wrong);"&gt;&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div class="pct"&gt;' + row.wrong + ' mistake(s)&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>}).join("");</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var allRows = tally(subs);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var maxAll = Math.max.apply(null, allRows.map(function(r){ return r.wrong; }).concat([1]));</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var allHtml = allRows.length === 0 ? '&lt;p class="muted small"&gt;No mistakes recorded across their submissions.&lt;/p&gt;' :</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>allRows.map(function(row){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>var flag = row.testCount &gt;= 2 ? "🔴 " : "";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>return '&lt;div class="topic-bar-row"&gt;&lt;div class="label"&gt;' + flag + escapeHtml(row.label) + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div class="topic-bar-track"&gt;&lt;div class="topic-bar-fill" style="width:' + Math.round(row.wrong/maxAll*100) + '%;background:' + (row.testCount&gt;=2 ? "var(--wrong)" : "var(--gold)") + ';"&gt;&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div class="pct"&gt;' + row.wrong + ' across ' + row.testCount + ' test(s)&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>}).join("");</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var subsHtml = subs.map(function(r){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var pct = r.total ? Math.round((r.score/r.total)*100) : 0;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>return '&lt;div class="flag-item"&gt;&lt;span&gt;' + escapeHtml(r.testTitle) + ' &amp;middot; ' + new Date(r.submittedAt).toLocaleDateString() + '&lt;/span&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;span class="n" style="color:var(--ink);"&gt;' + r.score + '/' + r.total + ' (' + pct + '%)&lt;/span&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}).join("");</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return '&lt;div class="back-link" id="backToSubs"&gt;&amp;larr; All submissions&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card"&gt;&lt;h2&gt;' + escapeHtml(latest.studentName) + '&lt;/h2&gt;&lt;p class="muted small"&gt;' + escapeHtml(phone) + '&lt;/p&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="row mt16"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div class="stat-card"&gt;&lt;div class="num"&gt;' + latest.score + '/' + latest.total + '&lt;/div&gt;&lt;div class="lbl"&gt;Latest score&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;div class="stat-card"&gt;&lt;div class="num"&gt;' + avgPct + '%&lt;/div&gt;&lt;div class="lbl"&gt;Average across ' + subs.length + ' test(s)&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card"&gt;&lt;h3 class="subtle-h"&gt;Errors &amp;mdash; latest test&lt;/h3&gt;' + latestHtml + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card"&gt;&lt;h3 class="subtle-h"&gt;Repeated mistakes &amp;mdash; all tests (🔴 = seen in 2+ tests)&lt;/h3&gt;' + allHtml + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card"&gt;&lt;h3 class="subtle-h"&gt;All submissions&lt;/h3&gt;' + subsHtml + '&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function dashboardTabHtml(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (resultsList.length === 0) return '&lt;div class="card"&gt;&lt;div class="empty-note"&gt;No submissions yet — analytics will appear here once students start completing tests.&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var uniquePhones = {}; resultsList.forEach(function(r){ uniquePhones[r.phone] = true; });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var avgPct = Math.round(resultsList.reduce(function(s,r){ return s + (r.total ? (r.score/r.total)*100 : 0); }, 0) / resultsList.length);</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var map = {};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>resultsList.forEach(function(r){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>r.details.forEach(function(d){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>if (d.isCorrect) return;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>var key = errorLabel(d);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>if (!map[key]) map[key] = { wrong: 0, testIds: {} };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>map[key].wrong++; map[key].testIds[r.testId] = true;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var rows = Object.keys(map).map(function(k){ return { label: k, wrong: map[k].wrong, testCount: Object.keys(map[k].testIds).length }; })</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>.sort(function(a,b){ return b.wrong - a.wrong; });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var mostCommon = rows.length ? rows[0].label : "—";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var maxWrong = Math.max.apply(null, rows.map(function(r){ return r.wrong; }).concat([1]));</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var chartHtml = rows.map(function(row){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>return '&lt;div class="topic-bar-row"&gt;&lt;div class="label"&gt;' + escapeHtml(row.label) + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="topic-bar-track"&gt;&lt;div class="topic-bar-fill" style="width:' + Math.round(row.wrong/maxWrong*100) + '%;background:var(--wrong);"&gt;&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="pct"&gt;' + row.wrong + ' mistake(s)&lt;/div&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}).join("");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var repeated = rows.filter(function(r){ return r.testCount &gt;= 2; });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var repeatedHtml = repeated.length === 0 ? '&lt;p class="muted small"&gt;Nothing has recurred across multiple tests yet.&lt;/p&gt;' :</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>repeated.map(function(row){ return '&lt;div class="flag-item"&gt;🔴 ' + escapeHtml(row.label) + '&lt;span class="n"&gt;' + row.wrong + ' mistakes across ' + row.testCount + ' test(s)&lt;/span&gt;&lt;/div&gt;'; }).join("");</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return '&lt;div class="stat-grid"&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="stat-card"&gt;&lt;div class="num"&gt;' + Object.keys(uniquePhones).length + '&lt;/div&gt;&lt;div class="lbl"&gt;Total students&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="stat-card"&gt;&lt;div class="num"&gt;' + resultsList.length + '&lt;/div&gt;&lt;div class="lbl"&gt;Submissions&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="stat-card"&gt;&lt;div class="num"&gt;' + avgPct + '%&lt;/div&gt;&lt;div class="lbl"&gt;Average score&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="stat-card"&gt;&lt;div class="num" style="font-size:15px;"&gt;' + escapeHtml(mostCommon) + '&lt;/div&gt;&lt;div class="lbl"&gt;Most frequent error&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card mt16"&gt;&lt;h3 class="subtle-h"&gt;Mistakes by topic / error type &amp;mdash; whole class&lt;/h3&gt;' + chartHtml + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card"&gt;&lt;h3 class="subtle-h"&gt;Repeated errors (needs additional practice)&lt;/h3&gt;' + repeatedHtml + '&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>/* ---------- Settings tab ---------- */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function settingsTabHtml(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var effective = getServerUrl();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>return '&lt;div class="card"&gt;&lt;h2&gt;Dashboard PIN&lt;/h2&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;p class="hint"&gt;Generate a new PIN any time. The old one stops working immediately.&lt;/p&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;button class="btn primary" id="genPinBtn"&gt;Generate a new PIN&lt;/button&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div id="pinRevealBox" class="code-box mt12" style="display:none;"&gt;&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card"&gt;&lt;h2&gt;Server&lt;/h2&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;p class="hint"&gt;Effective server URL right now (from SERVER_URL in the file, or your local test override):&lt;/p&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="code-box"&gt;' + (effective ? escapeHtml(effective) : "(none configured)") + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="field mt16"&gt;&lt;label&gt;Local test override &lt;span class="muted"&gt;(this browser only — for real deployment, edit SERVER_URL in the file)&lt;/span&gt;&lt;/label&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;input type="text" id="serverUrlSet" value="' + escapeHtml(localStorage.getItem("untServerUrlDev") || "") + '" placeholder="https://script.google.com/macros/s/.../exec"&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;div class="row"&gt;&lt;button class="btn primary" id="saveServerBtn"&gt;Save override&lt;/button&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;button class="btn" id="testServerBtn"&gt;Test connection&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>'&lt;div class="card"&gt;&lt;h2&gt;This device&lt;/h2&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;p class="hint"&gt;Clears any in-progress test caches and the local server override saved in this browser. Tests and submissions themselves live on the server and are unaffected.&lt;/p&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>'&lt;button class="btn danger" id="wipeLocalBtn"&gt;Clear local caches on this device&lt;/button&gt;&lt;/div&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function wireSettingsTab(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var genPinBtn = $("#genPinBtn");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (genPinBtn) genPinBtn.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var newPin = String(Math.floor(1000 + Math.random() * 9000));</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>apiPost("changePin", { pin: pinCache, newPin: newPin }).then(function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>pinCache = newPin; sessionStorage.setItem("untPin", newPin);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>var box = $("#pinRevealBox"); box.style.display = "block"; box.textContent = "New PIN: " + newPin + " — write it down now, it won't be shown again.";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>}).catch(handleTeacherApiError);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var saveServerBtn = $("#saveServerBtn");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (saveServerBtn) saveServerBtn.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>localStorage.setItem("untServerUrlDev", $("#serverUrlSet").value.trim()); toast("Saved"); renderTeacher();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var testServerBtn = $("#testServerBtn");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (testServerBtn) testServerBtn.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>apiGet("listTests", { pin: pinCache }).then(function(){ toast("Connected ✓"); }).catch(function(e){ toast("Couldn't connect: " + e.message); });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var wipeLocalBtn = $("#wipeLocalBtn");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (wipeLocalBtn) wipeLocalBtn.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>Object.keys(localStorage).forEach(function(k){ if (k.indexOf("untAttempt_") === 0 || k === "untServerUrlDev") localStorage.removeItem(k); });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>toast("Cleared"); renderTeacher();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>/* ---------- shared wiring for Tests / Submissions tabs ---------- */</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function wireTeacherTab(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (managingTest &amp;&amp; !questionDraft) {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>questionDraft = { id: null, topic: UNT_TOPICS[0], errorType: "", difficulty: "", type: "single", text: "", options: ["",""], correct: 0 };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var newTestBtn = $("#newTestBtn");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (newTestBtn) newTestBtn.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>apiPost("createOrUpdateTest", { pin: pinCache, test: { title: "Untitled test", questions: [] } }).then(function(res){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>managingTest = res.test; questionDraft = null;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>$("#dashContent").innerHTML = questionEditorHtml(); wireTeacherTab();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>}).catch(handleTeacherApiError);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.querySelectorAll("[data-manage]").forEach(function(b){ b.onclick = function(){ loadTestFull(b.getAttribute("data-manage")); }; });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.querySelectorAll("[data-deltest]").forEach(function(b){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>b.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>if (!confirm("Delete this test? Submissions already recorded for it are kept.")) return;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>apiPost("deleteTest", { pin: pinCache, testId: b.getAttribute("data-deltest") })</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>.then(function(){ testsList = testsList.filter(function(t){ return t.id !== b.getAttribute("data-deltest"); }); $("#dashContent").innerHTML = testsTabHtml(); wireTeacherTab(); })</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>.catch(handleTeacherApiError);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.querySelectorAll("[data-getlink]").forEach(function(b){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>b.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>var id = b.getAttribute("data-getlink");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>var link = location.origin + location.pathname + "#test=" + id;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>var card = $("#linkOutputCard"); card.style.display = "block";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>card.innerHTML = '&lt;h3&gt;Student link&lt;/h3&gt;&lt;div class="code-box mt8"&gt;' + escapeHtml(link) + '&lt;/div&gt;' +</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>'&lt;button class="btn primary small mt8" id="copyLinkBtn2"&gt;Copy link&lt;/button&gt;';</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>$("#copyLinkBtn2").onclick = function(){ copyText(link); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>card.scrollIntoView({behavior:"smooth"});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var backToTests = $("#backToTests");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (backToTests) backToTests.onclick = function(){ managingTest = null; questionDraft = null; renderTeacher(); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var saveTitleBtn = $("#saveTitleBtn");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (saveTitleBtn) saveTitleBtn.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>managingTest.title = $("#testTitleInput").value.trim() || "Untitled test";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>saveManagingTest();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.querySelectorAll("[data-editq]").forEach(function(b){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>b.onclick = function(){ questionDraft = JSON.parse(JSON.stringify(managingTest.questions.find(function(x){ return x.id === b.getAttribute("data-editq"); }))); $("#dashContent").innerHTML = questionEditorHtml(); wireTeacherTab(); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.querySelectorAll("[data-delq]").forEach(function(b){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>b.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>if (!confirm("Delete this question?")) return;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>managingTest.questions = managingTest.questions.filter(function(x){ return x.id !== b.getAttribute("data-delq"); });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>saveManagingTest();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var qTypeSel = $("#qType");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (qTypeSel) qTypeSel.onchange = function(){ syncDraftFromForm(); questionDraft.type = qTypeSel.value; questionDraft.correct = questionDraft.type === "multiple" ? [] : 0; $("#dashContent").innerHTML = questionEditorHtml(); wireTeacherTab(); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var addOptBtn = $("#addOptBtn");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (addOptBtn) addOptBtn.onclick = function(){ syncDraftFromForm(); if (questionDraft.options.length &lt; 6) questionDraft.options.push(""); $("#dashContent").innerHTML = questionEditorHtml(); wireTeacherTab(); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.querySelectorAll("[data-rmopt]").forEach(function(b){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>b.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>syncDraftFromForm();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>var i = parseInt(b.getAttribute("data-rmopt"), 10);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>questionDraft.options.splice(i, 1);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>if (questionDraft.type === "multiple") questionDraft.correct = questionDraft.correct.filter(function(c){ return c !== i; }).map(function(c){ return c &gt; i ? c-1 : c; });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>else if (questionDraft.correct === i) questionDraft.correct = 0; else if (questionDraft.correct &gt; i) questionDraft.correct--;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>$("#dashContent").innerHTML = questionEditorHtml(); wireTeacherTab();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var saveQBtn = $("#saveQBtn");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (saveQBtn) saveQBtn.onclick = function(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>syncDraftFromForm();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var topic = $("#qTopic").value, errorType = $("#qErrorType").value.trim(), difficulty = $("#qDifficulty").value.trim(), text = $("#qText").value.trim();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>if (!text) { toast("Enter the question text"); return; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>if (questionDraft.options.some(function(o){ return !o.trim(); })) { toast("Fill in every option, or remove empty ones"); return; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>if (questionDraft.type === "single" &amp;&amp; questionDraft.correct == null) { toast("Mark the correct answer"); return; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>if (questionDraft.type === "multiple" &amp;&amp; questionDraft.correct.length === 0) { toast("Mark at least one correct answer"); return; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var finalQ = { id: questionDraft.id || uid(), topic: topic, errorType: errorType, difficulty: difficulty, type: questionDraft.type, text: text, options: questionDraft.options, correct: questionDraft.correct };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>if (questionDraft.id) { var idx = managingTest.questions.findIndex(function(x){ return x.id === questionDraft.id; }); managingTest.questions[idx] = finalQ; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>else managingTest.questions.push(finalQ);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>questionDraft = null; saveManagingTest();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var cancelEditBtn = $("#cancelEditBtn");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (cancelEditBtn) cancelEditBtn.onclick = function(){ questionDraft = null; $("#dashContent").innerHTML = questionEditorHtml(); wireTeacherTab(); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.querySelectorAll("[data-optfield]").forEach(function(el){ el.oninput = function(){ questionDraft.options[parseInt(el.getAttribute("data-optfield"),10)] = el.value; }; });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.querySelectorAll("[data-correct]").forEach(function(el){ el.onchange = function(){ syncDraftFromForm(); }; });</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.querySelectorAll("[data-openphone]").forEach(function(row){ row.onclick = function(){ openStudentPhone = row.getAttribute("data-openphone"); $("#dashContent").innerHTML = submissionsTabHtml(); wireTeacherTab(); }; });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>var backToSubs = $("#backToSubs");</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (backToSubs) backToSubs.onclick = function(){ openStudentPhone = null; $("#dashContent").innerHTML = submissionsTabHtml(); wireTeacherTab(); };</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function saveManagingTest(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>apiPost("createOrUpdateTest", { pin: pinCache, test: managingTest }).then(function(res){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>managingTest = res.test; toast("Saved"); $("#dashContent").innerHTML = questionEditorHtml(); wireTeacherTab();</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}).catch(handleTeacherApiError);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>function syncDraftFromForm(){</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (!questionDraft) return;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>app.querySelectorAll("[data-optfield]").forEach(function(el){ questionDraft.options[parseInt(el.getAttribute("data-optfield"),10)] = el.value; });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>if (questionDraft.type === "multiple") {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>var arr = []; app.querySelectorAll('[data-correct]').forEach(function(c){ if (c.checked) arr.push(parseInt(c.getAttribute("data-correct"),10)); });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>questionDraft.correct = arr;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>} else {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>app.querySelectorAll('[data-correct]').forEach(function(r){ if (r.checked) questionDraft.correct = parseInt(r.getAttribute("data-correct"),10); });</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1">})();</span></p>
+<p class="p2"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p2"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
